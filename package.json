@@ -1,7 +1,7 @@
 {
   "name": "@floorsfi/core",
   "description": "Core code shared between Floors Finance apps and pkgs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "Apache-2.0",
   "sideEffects": false,
   "exports": {
@@ -45,8 +45,10 @@
     "typescript": "^5.8.0"
   },
   "dependencies": {
-    "type-fest-4": "npm:type-fest@latest",
-    "debug": "^4.4.1"
+    "@effect/platform": "^0.93.0",
+    "debug": "^4.4.1",
+    "effect": "^3.19.3",
+    "type-fest-4": "npm:type-fest@latest"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
