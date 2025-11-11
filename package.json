@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "require": "./src/index.ts",
@@ -69,7 +72,10 @@
     "typescript-eslint": "^8.44.0"
   },
   "homepage": "https://github.com/InverterNetwork/floors-core",
-  "repository": "InverterNetwork/floors-core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InverterNetwork/floors-core.git"
+  },
   "authors": [
     "InverterNetwork"
   ],
