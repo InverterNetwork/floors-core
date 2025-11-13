@@ -200,9 +200,22 @@ export default [
     inputs: [],
     outputs: [
       {
-        name: '',
+        name: 'floorPrice_',
         type: 'uint256',
         internalType: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'getFloorSection',
+    inputs: [],
+    outputs: [
+      {
+        name: 'floorSection_',
+        type: 'bytes32',
+        internalType: 'PackedSegment',
       },
     ],
     stateMutability: 'view',
@@ -216,6 +229,19 @@ export default [
         name: 'token_',
         type: 'address',
         internalType: 'address',
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'getPremiumSections',
+    inputs: [],
+    outputs: [
+      {
+        name: 'premiumSections_',
+        type: 'bytes32[]',
+        internalType: 'PackedSegment[]',
       },
     ],
     stateMutability: 'view',
@@ -374,12 +400,35 @@ export default [
   },
   {
     type: 'function',
+    name: 'raiseFloor',
+    inputs: [
+      {
+        name: 'collateralAmount_',
+        type: 'uint256',
+        internalType: 'uint256',
+      },
+    ],
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
     name: 'reconfigureSegments',
     inputs: [
       {
         name: 'newSegments_',
         type: 'bytes32[]',
         internalType: 'PackedSegment[]',
+      },
+      {
+        name: 'suppliedCollateral_',
+        type: 'uint256',
+        internalType: 'uint256',
+      },
+      {
+        name: 'selfSupplied_',
+        type: 'bool',
+        internalType: 'bool',
       },
     ],
     outputs: [],
@@ -603,6 +652,37 @@ export default [
       },
       {
         name: 'newVirtualSupply_',
+        type: 'uint256',
+        indexed: false,
+        internalType: 'uint256',
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: 'event',
+    name: 'FloorIncreased',
+    inputs: [
+      {
+        name: 'oldFloorPrice_',
+        type: 'uint256',
+        indexed: false,
+        internalType: 'uint256',
+      },
+      {
+        name: 'newFloorPrice_',
+        type: 'uint256',
+        indexed: false,
+        internalType: 'uint256',
+      },
+      {
+        name: 'collateralConsumed_',
+        type: 'uint256',
+        indexed: false,
+        internalType: 'uint256',
+      },
+      {
+        name: 'supplyIncrease_',
         type: 'uint256',
         indexed: false,
         internalType: 'uint256',
@@ -838,6 +918,11 @@ export default [
   },
   {
     type: 'error',
+    name: 'DiscreteCurveMathLib__InitialPriceTooLarge',
+    inputs: [],
+  },
+  {
+    type: 'error',
     name: 'DiscreteCurveMathLib__InsufficientIssuanceToSell',
     inputs: [
       {
@@ -851,6 +936,21 @@ export default [
         internalType: 'uint256',
       },
     ],
+  },
+  {
+    type: 'error',
+    name: 'DiscreteCurveMathLib__InvalidFlatSegment',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'DiscreteCurveMathLib__InvalidNumberOfSteps',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'DiscreteCurveMathLib__InvalidPointSegment',
+    inputs: [],
   },
   {
     type: 'error',
@@ -876,6 +976,16 @@ export default [
   {
     type: 'error',
     name: 'DiscreteCurveMathLib__NoSegmentsConfigured',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'DiscreteCurveMathLib__PriceIncreaseTooLarge',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'DiscreteCurveMathLib__SegmentIsFree',
     inputs: [],
   },
   {
@@ -907,6 +1017,11 @@ export default [
   },
   {
     type: 'error',
+    name: 'DiscreteCurveMathLib__SupplyPerStepTooLarge',
+    inputs: [],
+  },
+  {
+    type: 'error',
     name: 'DiscreteCurveMathLib__TooManySegments',
     inputs: [],
   },
@@ -922,12 +1037,17 @@ export default [
   },
   {
     type: 'error',
+    name: 'DiscreteCurveMathLib__ZeroSupplyPerStep',
+    inputs: [],
+  },
+  {
+    type: 'error',
     name: 'InvalidInitialization',
     inputs: [],
   },
   {
     type: 'error',
-    name: 'InvarianceCheckFailed',
+    name: 'Module__BC_Discrete_Redeeming_VirtualSupply__InvarianceCheckFailed',
     inputs: [
       {
         name: 'newCalculatedReserve_',
@@ -944,6 +1064,37 @@ export default [
   {
     type: 'error',
     name: 'Module__CallerNotPermissioned',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'Module__Floor__InsufficientPremiumSteps',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'Module__Floor__InsufficientSegments',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'Module__Floor__InvalidFloorSegment',
+    inputs: [
+      {
+        name: 'numberOfSteps_',
+        type: 'uint256',
+        internalType: 'uint256',
+      },
+      {
+        name: 'priceIncrease_',
+        type: 'uint256',
+        internalType: 'uint256',
+      },
+    ],
+  },
+  {
+    type: 'error',
+    name: 'Module__Floor__NoFloorIncrease',
     inputs: [],
   },
   {

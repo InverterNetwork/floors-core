@@ -21,7 +21,7 @@ Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releas
 ## Install
 
 ```bash
-bun add @floorsfi/core
+bun add @floorsfi/sdk
 ```
 
 Install Bun ( bun is the default package manager for this project ( its optional ) ):
@@ -72,12 +72,12 @@ bun type-check
 
 This package is licensed - see the [LICENSE](./LICENSE.md) file for details.
 
-[ci-image]: https://badgen.net/github/checks/InverterNetwork/floors-core/main?label=ci
-[ci-url]: https://github.com/InverterNetwork/floors-core/actions/workflows/ci.yaml
-[npm-url]: https://npmjs.org/package/@floorsfi/core
+[ci-image]: https://badgen.net/github/checks/InverterNetwork/floors-sdk/main?label=ci
+[ci-url]: https://github.com/InverterNetwork/floors-sdk/actions/workflows/ci.yaml
+[npm-url]: https://npmjs.org/package/@floorsfi/sdk
 [twitter-url]: https://twitter.com/FloorsFinance
 [twitter-image]: https://img.shields.io/twitter/follow/FloorsFinance.svg?label=follow+FloorsFinance
 [license-image]: https://img.shields.io/badge/License-Apache%20v2-blue
 [license-url]: ./LICENSE.md
-[npm-latest-image]: https://img.shields.io/npm/v/@floorsfi/core/latest.svg
-[npm-downloads-image]: https://img.shields.io/npm/dm/@floorsfi/core.svg
+[npm-latest-image]: https://img.shields.io/npm/v/@floorsfi/sdk/latest.svg
+[npm-downloads-image]: https://img.shields.io/npm/dm/@floorsfi/sdk.svg
