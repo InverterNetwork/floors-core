@@ -1648,6 +1648,9 @@ type Market {
   initialPriceRaw: numeric!
   isBuyOpen: Boolean!
   isSellOpen: Boolean!
+
+  """An object relationship"""
+  issuanceToken: Token
   issuanceToken_id: String!
   lastElevationTimestamp: numeric!
   lastTradeTimestamp: numeric!
@@ -1657,6 +1660,9 @@ type Market {
   maxLTV: numeric!
   maxSupplyFormatted: String!
   maxSupplyRaw: numeric!
+
+  """An object relationship"""
+  reserveToken: Token
   reserveToken_id: String!
   sellFeeBps: numeric!
   status: marketstatus!
@@ -1999,6 +2005,7 @@ input Market_bool_exp {
   initialPriceRaw: numeric_comparison_exp
   isBuyOpen: Boolean_comparison_exp
   isSellOpen: Boolean_comparison_exp
+  issuanceToken: Token_bool_exp
   issuanceToken_id: String_comparison_exp
   lastElevationTimestamp: numeric_comparison_exp
   lastTradeTimestamp: numeric_comparison_exp
@@ -2008,6 +2015,7 @@ input Market_bool_exp {
   maxLTV: numeric_comparison_exp
   maxSupplyFormatted: String_comparison_exp
   maxSupplyRaw: numeric_comparison_exp
+  reserveToken: Token_bool_exp
   reserveToken_id: String_comparison_exp
   sellFeeBps: numeric_comparison_exp
   status: marketstatus_comparison_exp
@@ -2107,6 +2115,7 @@ input Market_order_by {
   initialPriceRaw: order_by
   isBuyOpen: order_by
   isSellOpen: order_by
+  issuanceToken: Token_order_by
   issuanceToken_id: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
@@ -2116,6 +2125,7 @@ input Market_order_by {
   maxLTV: order_by
   maxSupplyFormatted: order_by
   maxSupplyRaw: order_by
+  reserveToken: Token_order_by
   reserveToken_id: order_by
   sellFeeBps: order_by
   status: order_by

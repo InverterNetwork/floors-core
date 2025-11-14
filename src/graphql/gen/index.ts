@@ -1,19 +1,19 @@
 // @ts-nocheck
-import {
-  type ClientOptions,
-  createClient as createClientOriginal,
-  type FieldsSelection,
-  generateGraphqlOperation,
-  GenqlError,
-  type GraphqlOperation,
-  linkTypeMap,
-} from './runtime'
 import type {
-  query_root,
   query_rootGenqlSelection,
-  subscription_root,
+  query_root,
   subscription_rootGenqlSelection,
+  subscription_root,
 } from './schema'
+import {
+  linkTypeMap,
+  createClient as createClientOriginal,
+  generateGraphqlOperation,
+  type FieldsSelection,
+  type GraphqlOperation,
+  type ClientOptions,
+  GenqlError,
+} from './runtime'
 export type { FieldsSelection } from './runtime'
 export { GenqlError }
 
@@ -23,7 +23,7 @@ const typeMap = linkTypeMap(types as any)
 
 export interface Client {
   query<R extends query_rootGenqlSelection>(
-    request: R & { __name?: string }
+    request: R & { __name?: string },
   ): Promise<FieldsSelection<query_root, R>>
 }
 
@@ -42,22 +42,22 @@ export const everything = {
   __scalar: true,
 }
 
-export type QueryResult<fields extends query_rootGenqlSelection> = FieldsSelection<
-  query_root,
-  fields
->
+export type QueryResult<fields extends query_rootGenqlSelection> =
+  FieldsSelection<query_root, fields>
 export const generateQueryOp: (
-  fields: query_rootGenqlSelection & { __name?: string }
+  fields: query_rootGenqlSelection & { __name?: string },
 ) => GraphqlOperation = function (fields) {
   return generateGraphqlOperation('query', typeMap.Query!, fields as any)
 }
 
-export type SubscriptionResult<fields extends subscription_rootGenqlSelection> = FieldsSelection<
-  subscription_root,
-  fields
->
+export type SubscriptionResult<fields extends subscription_rootGenqlSelection> =
+  FieldsSelection<subscription_root, fields>
 export const generateSubscriptionOp: (
-  fields: subscription_rootGenqlSelection & { __name?: string }
+  fields: subscription_rootGenqlSelection & { __name?: string },
 ) => GraphqlOperation = function (fields) {
-  return generateGraphqlOperation('subscription', typeMap.Subscription!, fields as any)
+  return generateGraphqlOperation(
+    'subscription',
+    typeMap.Subscription!,
+    fields as any,
+  )
 }
