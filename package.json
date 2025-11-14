@@ -17,6 +17,11 @@
       "require": "./src/graphql/index.ts",
       "import": "./src/graphql/index.ts",
       "types": "./src/graphql/index.ts"
+    },
+    "./client": {
+      "require": "./src/client/index.ts",
+      "import": "./src/client/index.ts",
+      "types": "./src/client/index.ts"
     }
   },
   "files": [
@@ -54,6 +59,7 @@
     "typescript": "^5.8.0"
   },
   "peerDependencies": {
+    "@tanstack/react-query": "^5.64.0",
     "@effect/platform": "^0.93.0",
     "effect": "^3.19.3"
   },
@@ -69,6 +75,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@genql/cli": "^6.3.3",
+    "@tanstack/react-query": "^5.64.0",
     "@types/bun": "^1.2.22",
     "@types/debug": "^4.1.12",
     "eslint-plugin-prettier": "^5.5.4",
