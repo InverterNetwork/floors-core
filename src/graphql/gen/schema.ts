@@ -203,8 +203,8 @@ export interface Market {
     floorSupplyFormatted: Scalars['String']
     floorSupplyRaw: Scalars['numeric']
     id: Scalars['String']
-    initialPriceFormatted: Scalars['String']
-    initialPriceRaw: Scalars['numeric']
+    initialFloorPriceFormatted: Scalars['String']
+    initialFloorPriceRaw: Scalars['numeric']
     isBuyOpen: Scalars['Boolean']
     isSellOpen: Scalars['Boolean']
     /** An object relationship */
@@ -216,8 +216,6 @@ export interface Market {
     marketSupplyFormatted: Scalars['String']
     marketSupplyRaw: Scalars['numeric']
     maxLTV: Scalars['numeric']
-    maxSupplyFormatted: Scalars['String']
-    maxSupplyRaw: Scalars['numeric']
     /** An object relationship */
     reserveToken: (Token | null)
     reserveToken_id: Scalars['String']
@@ -278,7 +276,7 @@ export type MarketSnapshot_select_column = 'db_write_timestamp' | 'floorPriceFor
 
 
 /** select columns of table "Market" */
-export type Market_select_column = 'buyFeeBps' | 'createdAt' | 'creator_id' | 'currentPriceFormatted' | 'currentPriceRaw' | 'db_write_timestamp' | 'factory_id' | 'floorPriceFormatted' | 'floorPriceRaw' | 'floorSupplyFormatted' | 'floorSupplyRaw' | 'id' | 'initialPriceFormatted' | 'initialPriceRaw' | 'isBuyOpen' | 'isSellOpen' | 'issuanceToken_id' | 'lastElevationTimestamp' | 'lastTradeTimestamp' | 'lastUpdatedAt' | 'marketSupplyFormatted' | 'marketSupplyRaw' | 'maxLTV' | 'maxSupplyFormatted' | 'maxSupplyRaw' | 'reserveToken_id' | 'sellFeeBps' | 'status' | 'totalSupplyFormatted' | 'totalSupplyRaw' | 'tradingFeeBps'
+export type Market_select_column = 'buyFeeBps' | 'createdAt' | 'creator_id' | 'currentPriceFormatted' | 'currentPriceRaw' | 'db_write_timestamp' | 'factory_id' | 'floorPriceFormatted' | 'floorPriceRaw' | 'floorSupplyFormatted' | 'floorSupplyRaw' | 'id' | 'initialFloorPriceFormatted' | 'initialFloorPriceRaw' | 'isBuyOpen' | 'isSellOpen' | 'issuanceToken_id' | 'lastElevationTimestamp' | 'lastTradeTimestamp' | 'lastUpdatedAt' | 'marketSupplyFormatted' | 'marketSupplyRaw' | 'maxLTV' | 'reserveToken_id' | 'sellFeeBps' | 'status' | 'totalSupplyFormatted' | 'totalSupplyRaw' | 'tradingFeeBps'
 
 
 /** columns and relationships of "ModuleAddress" */
@@ -431,6 +429,8 @@ export interface Token {
     db_write_timestamp: (Scalars['timestamp'] | null)
     decimals: Scalars['Int']
     id: Scalars['String']
+    maxSupplyFormatted: Scalars['String']
+    maxSupplyRaw: Scalars['numeric']
     name: Scalars['String']
     symbol: Scalars['String']
     __typename: 'Token'
@@ -438,7 +438,7 @@ export interface Token {
 
 
 /** select columns of table "Token" */
-export type Token_select_column = 'db_write_timestamp' | 'decimals' | 'id' | 'name' | 'symbol'
+export type Token_select_column = 'db_write_timestamp' | 'decimals' | 'id' | 'maxSupplyFormatted' | 'maxSupplyRaw' | 'name' | 'symbol'
 
 
 /** columns and relationships of "Trade" */
@@ -1468,8 +1468,8 @@ export interface MarketGenqlSelection{
     floorSupplyFormatted?: boolean | number
     floorSupplyRaw?: boolean | number
     id?: boolean | number
-    initialPriceFormatted?: boolean | number
-    initialPriceRaw?: boolean | number
+    initialFloorPriceFormatted?: boolean | number
+    initialFloorPriceRaw?: boolean | number
     isBuyOpen?: boolean | number
     isSellOpen?: boolean | number
     /** An object relationship */
@@ -1481,8 +1481,6 @@ export interface MarketGenqlSelection{
     marketSupplyFormatted?: boolean | number
     marketSupplyRaw?: boolean | number
     maxLTV?: boolean | number
-    maxSupplyFormatted?: boolean | number
-    maxSupplyRaw?: boolean | number
     /** An object relationship */
     reserveToken?: TokenGenqlSelection
     reserveToken_id?: boolean | number
@@ -1592,35 +1590,35 @@ export interface Market_aggregate_order_by {avg?: (Market_avg_order_by | null),c
 
 
 /** order by avg() on columns of table "Market" */
-export interface Market_avg_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_avg_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** Boolean expression to filter rows from the table "Market". All fields are combined with a logical 'AND'. */
-export interface Market_bool_exp {_and?: (Market_bool_exp[] | null),_not?: (Market_bool_exp | null),_or?: (Market_bool_exp[] | null),buyFeeBps?: (numeric_comparison_exp | null),createdAt?: (numeric_comparison_exp | null),creator_id?: (String_comparison_exp | null),currentPriceFormatted?: (String_comparison_exp | null),currentPriceRaw?: (numeric_comparison_exp | null),db_write_timestamp?: (timestamp_comparison_exp | null),factory_id?: (String_comparison_exp | null),feeDistributions?: (FeeDistribution_bool_exp | null),floorElevations?: (FloorElevation_bool_exp | null),floorPriceFormatted?: (String_comparison_exp | null),floorPriceRaw?: (numeric_comparison_exp | null),floorSupplyFormatted?: (String_comparison_exp | null),floorSupplyRaw?: (numeric_comparison_exp | null),id?: (String_comparison_exp | null),initialPriceFormatted?: (String_comparison_exp | null),initialPriceRaw?: (numeric_comparison_exp | null),isBuyOpen?: (Boolean_comparison_exp | null),isSellOpen?: (Boolean_comparison_exp | null),issuanceToken?: (Token_bool_exp | null),issuanceToken_id?: (String_comparison_exp | null),lastElevationTimestamp?: (numeric_comparison_exp | null),lastTradeTimestamp?: (numeric_comparison_exp | null),lastUpdatedAt?: (numeric_comparison_exp | null),marketSupplyFormatted?: (String_comparison_exp | null),marketSupplyRaw?: (numeric_comparison_exp | null),maxLTV?: (numeric_comparison_exp | null),maxSupplyFormatted?: (String_comparison_exp | null),maxSupplyRaw?: (numeric_comparison_exp | null),reserveToken?: (Token_bool_exp | null),reserveToken_id?: (String_comparison_exp | null),sellFeeBps?: (numeric_comparison_exp | null),status?: (marketstatus_comparison_exp | null),totalSupplyFormatted?: (String_comparison_exp | null),totalSupplyRaw?: (numeric_comparison_exp | null),trades?: (Trade_bool_exp | null),tradingFeeBps?: (numeric_comparison_exp | null)}
+export interface Market_bool_exp {_and?: (Market_bool_exp[] | null),_not?: (Market_bool_exp | null),_or?: (Market_bool_exp[] | null),buyFeeBps?: (numeric_comparison_exp | null),createdAt?: (numeric_comparison_exp | null),creator_id?: (String_comparison_exp | null),currentPriceFormatted?: (String_comparison_exp | null),currentPriceRaw?: (numeric_comparison_exp | null),db_write_timestamp?: (timestamp_comparison_exp | null),factory_id?: (String_comparison_exp | null),feeDistributions?: (FeeDistribution_bool_exp | null),floorElevations?: (FloorElevation_bool_exp | null),floorPriceFormatted?: (String_comparison_exp | null),floorPriceRaw?: (numeric_comparison_exp | null),floorSupplyFormatted?: (String_comparison_exp | null),floorSupplyRaw?: (numeric_comparison_exp | null),id?: (String_comparison_exp | null),initialFloorPriceFormatted?: (String_comparison_exp | null),initialFloorPriceRaw?: (numeric_comparison_exp | null),isBuyOpen?: (Boolean_comparison_exp | null),isSellOpen?: (Boolean_comparison_exp | null),issuanceToken?: (Token_bool_exp | null),issuanceToken_id?: (String_comparison_exp | null),lastElevationTimestamp?: (numeric_comparison_exp | null),lastTradeTimestamp?: (numeric_comparison_exp | null),lastUpdatedAt?: (numeric_comparison_exp | null),marketSupplyFormatted?: (String_comparison_exp | null),marketSupplyRaw?: (numeric_comparison_exp | null),maxLTV?: (numeric_comparison_exp | null),reserveToken?: (Token_bool_exp | null),reserveToken_id?: (String_comparison_exp | null),sellFeeBps?: (numeric_comparison_exp | null),status?: (marketstatus_comparison_exp | null),totalSupplyFormatted?: (String_comparison_exp | null),totalSupplyRaw?: (numeric_comparison_exp | null),trades?: (Trade_bool_exp | null),tradingFeeBps?: (numeric_comparison_exp | null)}
 
 
 /** order by max() on columns of table "Market" */
-export interface Market_max_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialPriceFormatted?: (order_by | null),initialPriceRaw?: (order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyFormatted?: (order_by | null),maxSupplyRaw?: (order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_max_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialFloorPriceFormatted?: (order_by | null),initialFloorPriceRaw?: (order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by min() on columns of table "Market" */
-export interface Market_min_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialPriceFormatted?: (order_by | null),initialPriceRaw?: (order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyFormatted?: (order_by | null),maxSupplyRaw?: (order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_min_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialFloorPriceFormatted?: (order_by | null),initialFloorPriceRaw?: (order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** Ordering options when selecting data from "Market". */
-export interface Market_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),feeDistributions_aggregate?: (FeeDistribution_aggregate_order_by | null),floorElevations_aggregate?: (FloorElevation_aggregate_order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialPriceFormatted?: (order_by | null),initialPriceRaw?: (order_by | null),isBuyOpen?: (order_by | null),isSellOpen?: (order_by | null),issuanceToken?: (Token_order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyFormatted?: (order_by | null),maxSupplyRaw?: (order_by | null),reserveToken?: (Token_order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),trades_aggregate?: (Trade_aggregate_order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),creator_id?: (order_by | null),currentPriceFormatted?: (order_by | null),currentPriceRaw?: (order_by | null),db_write_timestamp?: (order_by | null),factory_id?: (order_by | null),feeDistributions_aggregate?: (FeeDistribution_aggregate_order_by | null),floorElevations_aggregate?: (FloorElevation_aggregate_order_by | null),floorPriceFormatted?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyFormatted?: (order_by | null),floorSupplyRaw?: (order_by | null),id?: (order_by | null),initialFloorPriceFormatted?: (order_by | null),initialFloorPriceRaw?: (order_by | null),isBuyOpen?: (order_by | null),isSellOpen?: (order_by | null),issuanceToken?: (Token_order_by | null),issuanceToken_id?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyFormatted?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),reserveToken?: (Token_order_by | null),reserveToken_id?: (order_by | null),sellFeeBps?: (order_by | null),status?: (order_by | null),totalSupplyFormatted?: (order_by | null),totalSupplyRaw?: (order_by | null),trades_aggregate?: (Trade_aggregate_order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by stddev() on columns of table "Market" */
-export interface Market_stddev_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_stddev_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by stddev_pop() on columns of table "Market" */
-export interface Market_stddev_pop_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_stddev_pop_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by stddev_samp() on columns of table "Market" */
-export interface Market_stddev_samp_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_stddev_samp_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** Streaming cursor of the table "Market" */
@@ -1632,23 +1630,23 @@ ordering?: (cursor_ordering | null)}
 
 
 /** Initial value of the column from where the streaming should start */
-export interface Market_stream_cursor_value_input {buyFeeBps?: (Scalars['numeric'] | null),createdAt?: (Scalars['numeric'] | null),creator_id?: (Scalars['String'] | null),currentPriceFormatted?: (Scalars['String'] | null),currentPriceRaw?: (Scalars['numeric'] | null),db_write_timestamp?: (Scalars['timestamp'] | null),factory_id?: (Scalars['String'] | null),floorPriceFormatted?: (Scalars['String'] | null),floorPriceRaw?: (Scalars['numeric'] | null),floorSupplyFormatted?: (Scalars['String'] | null),floorSupplyRaw?: (Scalars['numeric'] | null),id?: (Scalars['String'] | null),initialPriceFormatted?: (Scalars['String'] | null),initialPriceRaw?: (Scalars['numeric'] | null),isBuyOpen?: (Scalars['Boolean'] | null),isSellOpen?: (Scalars['Boolean'] | null),issuanceToken_id?: (Scalars['String'] | null),lastElevationTimestamp?: (Scalars['numeric'] | null),lastTradeTimestamp?: (Scalars['numeric'] | null),lastUpdatedAt?: (Scalars['numeric'] | null),marketSupplyFormatted?: (Scalars['String'] | null),marketSupplyRaw?: (Scalars['numeric'] | null),maxLTV?: (Scalars['numeric'] | null),maxSupplyFormatted?: (Scalars['String'] | null),maxSupplyRaw?: (Scalars['numeric'] | null),reserveToken_id?: (Scalars['String'] | null),sellFeeBps?: (Scalars['numeric'] | null),status?: (Scalars['marketstatus'] | null),totalSupplyFormatted?: (Scalars['String'] | null),totalSupplyRaw?: (Scalars['numeric'] | null),tradingFeeBps?: (Scalars['numeric'] | null)}
+export interface Market_stream_cursor_value_input {buyFeeBps?: (Scalars['numeric'] | null),createdAt?: (Scalars['numeric'] | null),creator_id?: (Scalars['String'] | null),currentPriceFormatted?: (Scalars['String'] | null),currentPriceRaw?: (Scalars['numeric'] | null),db_write_timestamp?: (Scalars['timestamp'] | null),factory_id?: (Scalars['String'] | null),floorPriceFormatted?: (Scalars['String'] | null),floorPriceRaw?: (Scalars['numeric'] | null),floorSupplyFormatted?: (Scalars['String'] | null),floorSupplyRaw?: (Scalars['numeric'] | null),id?: (Scalars['String'] | null),initialFloorPriceFormatted?: (Scalars['String'] | null),initialFloorPriceRaw?: (Scalars['numeric'] | null),isBuyOpen?: (Scalars['Boolean'] | null),isSellOpen?: (Scalars['Boolean'] | null),issuanceToken_id?: (Scalars['String'] | null),lastElevationTimestamp?: (Scalars['numeric'] | null),lastTradeTimestamp?: (Scalars['numeric'] | null),lastUpdatedAt?: (Scalars['numeric'] | null),marketSupplyFormatted?: (Scalars['String'] | null),marketSupplyRaw?: (Scalars['numeric'] | null),maxLTV?: (Scalars['numeric'] | null),reserveToken_id?: (Scalars['String'] | null),sellFeeBps?: (Scalars['numeric'] | null),status?: (Scalars['marketstatus'] | null),totalSupplyFormatted?: (Scalars['String'] | null),totalSupplyRaw?: (Scalars['numeric'] | null),tradingFeeBps?: (Scalars['numeric'] | null)}
 
 
 /** order by sum() on columns of table "Market" */
-export interface Market_sum_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_sum_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by var_pop() on columns of table "Market" */
-export interface Market_var_pop_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_var_pop_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by var_samp() on columns of table "Market" */
-export interface Market_var_samp_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_var_samp_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** order by variance() on columns of table "Market" */
-export interface Market_variance_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),maxSupplyRaw?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
+export interface Market_variance_order_by {buyFeeBps?: (order_by | null),createdAt?: (order_by | null),currentPriceRaw?: (order_by | null),floorPriceRaw?: (order_by | null),floorSupplyRaw?: (order_by | null),initialFloorPriceRaw?: (order_by | null),lastElevationTimestamp?: (order_by | null),lastTradeTimestamp?: (order_by | null),lastUpdatedAt?: (order_by | null),marketSupplyRaw?: (order_by | null),maxLTV?: (order_by | null),sellFeeBps?: (order_by | null),totalSupplyRaw?: (order_by | null),tradingFeeBps?: (order_by | null)}
 
 
 /** columns and relationships of "ModuleAddress" */
@@ -2052,6 +2050,8 @@ export interface TokenGenqlSelection{
     db_write_timestamp?: boolean | number
     decimals?: boolean | number
     id?: boolean | number
+    maxSupplyFormatted?: boolean | number
+    maxSupplyRaw?: boolean | number
     name?: boolean | number
     symbol?: boolean | number
     __typename?: boolean | number
@@ -2060,11 +2060,11 @@ export interface TokenGenqlSelection{
 
 
 /** Boolean expression to filter rows from the table "Token". All fields are combined with a logical 'AND'. */
-export interface Token_bool_exp {_and?: (Token_bool_exp[] | null),_not?: (Token_bool_exp | null),_or?: (Token_bool_exp[] | null),db_write_timestamp?: (timestamp_comparison_exp | null),decimals?: (Int_comparison_exp | null),id?: (String_comparison_exp | null),name?: (String_comparison_exp | null),symbol?: (String_comparison_exp | null)}
+export interface Token_bool_exp {_and?: (Token_bool_exp[] | null),_not?: (Token_bool_exp | null),_or?: (Token_bool_exp[] | null),db_write_timestamp?: (timestamp_comparison_exp | null),decimals?: (Int_comparison_exp | null),id?: (String_comparison_exp | null),maxSupplyFormatted?: (String_comparison_exp | null),maxSupplyRaw?: (numeric_comparison_exp | null),name?: (String_comparison_exp | null),symbol?: (String_comparison_exp | null)}
 
 
 /** Ordering options when selecting data from "Token". */
-export interface Token_order_by {db_write_timestamp?: (order_by | null),decimals?: (order_by | null),id?: (order_by | null),name?: (order_by | null),symbol?: (order_by | null)}
+export interface Token_order_by {db_write_timestamp?: (order_by | null),decimals?: (order_by | null),id?: (order_by | null),maxSupplyFormatted?: (order_by | null),maxSupplyRaw?: (order_by | null),name?: (order_by | null),symbol?: (order_by | null)}
 
 
 /** Streaming cursor of the table "Token" */
@@ -2076,7 +2076,7 @@ ordering?: (cursor_ordering | null)}
 
 
 /** Initial value of the column from where the streaming should start */
-export interface Token_stream_cursor_value_input {db_write_timestamp?: (Scalars['timestamp'] | null),decimals?: (Scalars['Int'] | null),id?: (Scalars['String'] | null),name?: (Scalars['String'] | null),symbol?: (Scalars['String'] | null)}
+export interface Token_stream_cursor_value_input {db_write_timestamp?: (Scalars['timestamp'] | null),decimals?: (Scalars['Int'] | null),id?: (Scalars['String'] | null),maxSupplyFormatted?: (Scalars['String'] | null),maxSupplyRaw?: (Scalars['numeric'] | null),name?: (Scalars['String'] | null),symbol?: (Scalars['String'] | null)}
 
 
 /** columns and relationships of "Trade" */
@@ -3839,8 +3839,8 @@ export const enumMarketSelectColumn = {
    floorSupplyFormatted: 'floorSupplyFormatted' as const,
    floorSupplyRaw: 'floorSupplyRaw' as const,
    id: 'id' as const,
-   initialPriceFormatted: 'initialPriceFormatted' as const,
-   initialPriceRaw: 'initialPriceRaw' as const,
+   initialFloorPriceFormatted: 'initialFloorPriceFormatted' as const,
+   initialFloorPriceRaw: 'initialFloorPriceRaw' as const,
    isBuyOpen: 'isBuyOpen' as const,
    isSellOpen: 'isSellOpen' as const,
    issuanceToken_id: 'issuanceToken_id' as const,
@@ -3850,8 +3850,6 @@ export const enumMarketSelectColumn = {
    marketSupplyFormatted: 'marketSupplyFormatted' as const,
    marketSupplyRaw: 'marketSupplyRaw' as const,
    maxLTV: 'maxLTV' as const,
-   maxSupplyFormatted: 'maxSupplyFormatted' as const,
-   maxSupplyRaw: 'maxSupplyRaw' as const,
    reserveToken_id: 'reserveToken_id' as const,
    sellFeeBps: 'sellFeeBps' as const,
    status: 'status' as const,
@@ -3956,6 +3954,8 @@ export const enumTokenSelectColumn = {
    db_write_timestamp: 'db_write_timestamp' as const,
    decimals: 'decimals' as const,
    id: 'id' as const,
+   maxSupplyFormatted: 'maxSupplyFormatted' as const,
+   maxSupplyRaw: 'maxSupplyRaw' as const,
    name: 'name' as const,
    symbol: 'symbol' as const
 }

@@ -2769,10 +2769,10 @@ export default {
             "id": [
                 183
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 183
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 261
             ],
             "isBuyOpen": [
@@ -2803,12 +2803,6 @@ export default {
                 261
             ],
             "maxLTV": [
-                261
-            ],
-            "maxSupplyFormatted": [
-                183
-            ],
-            "maxSupplyRaw": [
                 261
             ],
             "reserveToken": [
@@ -3294,7 +3288,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -3310,9 +3304,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -3380,10 +3371,10 @@ export default {
             "id": [
                 184
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 184
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 262
             ],
             "isBuyOpen": [
@@ -3414,12 +3405,6 @@ export default {
                 262
             ],
             "maxLTV": [
-                262
-            ],
-            "maxSupplyFormatted": [
-                184
-            ],
-            "maxSupplyRaw": [
                 262
             ],
             "reserveToken": [
@@ -3487,10 +3472,10 @@ export default {
             "id": [
                 263
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "issuanceToken_id": [
@@ -3512,12 +3497,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyFormatted": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "reserveToken_id": [
@@ -3579,10 +3558,10 @@ export default {
             "id": [
                 263
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "issuanceToken_id": [
@@ -3604,12 +3583,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyFormatted": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "reserveToken_id": [
@@ -3677,10 +3650,10 @@ export default {
             "id": [
                 263
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "isBuyOpen": [
@@ -3711,12 +3684,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyFormatted": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "reserveToken": [
@@ -3764,7 +3731,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -3780,9 +3747,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -3814,7 +3778,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -3830,9 +3794,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -3864,7 +3825,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -3880,9 +3841,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -3946,10 +3904,10 @@ export default {
             "id": [
                 183
             ],
-            "initialPriceFormatted": [
+            "initialFloorPriceFormatted": [
                 183
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 261
             ],
             "isBuyOpen": [
@@ -3977,12 +3935,6 @@ export default {
                 261
             ],
             "maxLTV": [
-                261
-            ],
-            "maxSupplyFormatted": [
-                183
-            ],
-            "maxSupplyRaw": [
                 261
             ],
             "reserveToken_id": [
@@ -4023,7 +3975,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -4039,9 +3991,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -4073,7 +4022,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -4089,9 +4038,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -4123,7 +4069,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -4139,9 +4085,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -4173,7 +4116,7 @@ export default {
             "floorSupplyRaw": [
                 263
             ],
-            "initialPriceRaw": [
+            "initialFloorPriceRaw": [
                 263
             ],
             "lastElevationTimestamp": [
@@ -4189,9 +4132,6 @@ export default {
                 263
             ],
             "maxLTV": [
-                263
-            ],
-            "maxSupplyRaw": [
                 263
             ],
             "sellFeeBps": [
@@ -5909,6 +5849,12 @@ export default {
             "id": [
                 183
             ],
+            "maxSupplyFormatted": [
+                183
+            ],
+            "maxSupplyRaw": [
+                261
+            ],
             "name": [
                 183
             ],
@@ -5938,6 +5884,12 @@ export default {
             "id": [
                 184
             ],
+            "maxSupplyFormatted": [
+                184
+            ],
+            "maxSupplyRaw": [
+                262
+            ],
             "name": [
                 184
             ],
@@ -5956,6 +5908,12 @@ export default {
                 263
             ],
             "id": [
+                263
+            ],
+            "maxSupplyFormatted": [
+                263
+            ],
+            "maxSupplyRaw": [
                 263
             ],
             "name": [
@@ -5989,6 +5947,12 @@ export default {
             ],
             "id": [
                 183
+            ],
+            "maxSupplyFormatted": [
+                183
+            ],
+            "maxSupplyRaw": [
+                261
             ],
             "name": [
                 183

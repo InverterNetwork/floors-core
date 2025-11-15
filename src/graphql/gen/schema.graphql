@@ -1644,8 +1644,8 @@ type Market {
   floorSupplyFormatted: String!
   floorSupplyRaw: numeric!
   id: String!
-  initialPriceFormatted: String!
-  initialPriceRaw: numeric!
+  initialFloorPriceFormatted: String!
+  initialFloorPriceRaw: numeric!
   isBuyOpen: Boolean!
   isSellOpen: Boolean!
 
@@ -1658,8 +1658,6 @@ type Market {
   marketSupplyFormatted: String!
   marketSupplyRaw: numeric!
   maxLTV: numeric!
-  maxSupplyFormatted: String!
-  maxSupplyRaw: numeric!
 
   """An object relationship"""
   reserveToken: Token
@@ -1968,13 +1966,12 @@ input Market_avg_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2001,8 +1998,8 @@ input Market_bool_exp {
   floorSupplyFormatted: String_comparison_exp
   floorSupplyRaw: numeric_comparison_exp
   id: String_comparison_exp
-  initialPriceFormatted: String_comparison_exp
-  initialPriceRaw: numeric_comparison_exp
+  initialFloorPriceFormatted: String_comparison_exp
+  initialFloorPriceRaw: numeric_comparison_exp
   isBuyOpen: Boolean_comparison_exp
   isSellOpen: Boolean_comparison_exp
   issuanceToken: Token_bool_exp
@@ -2013,8 +2010,6 @@ input Market_bool_exp {
   marketSupplyFormatted: String_comparison_exp
   marketSupplyRaw: numeric_comparison_exp
   maxLTV: numeric_comparison_exp
-  maxSupplyFormatted: String_comparison_exp
-  maxSupplyRaw: numeric_comparison_exp
   reserveToken: Token_bool_exp
   reserveToken_id: String_comparison_exp
   sellFeeBps: numeric_comparison_exp
@@ -2041,8 +2036,8 @@ input Market_max_order_by {
   floorSupplyFormatted: order_by
   floorSupplyRaw: order_by
   id: order_by
-  initialPriceFormatted: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceFormatted: order_by
+  initialFloorPriceRaw: order_by
   issuanceToken_id: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
@@ -2050,8 +2045,6 @@ input Market_max_order_by {
   marketSupplyFormatted: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyFormatted: order_by
-  maxSupplyRaw: order_by
   reserveToken_id: order_by
   sellFeeBps: order_by
   status: order_by
@@ -2076,8 +2069,8 @@ input Market_min_order_by {
   floorSupplyFormatted: order_by
   floorSupplyRaw: order_by
   id: order_by
-  initialPriceFormatted: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceFormatted: order_by
+  initialFloorPriceRaw: order_by
   issuanceToken_id: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
@@ -2085,8 +2078,6 @@ input Market_min_order_by {
   marketSupplyFormatted: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyFormatted: order_by
-  maxSupplyRaw: order_by
   reserveToken_id: order_by
   sellFeeBps: order_by
   status: order_by
@@ -2111,8 +2102,8 @@ input Market_order_by {
   floorSupplyFormatted: order_by
   floorSupplyRaw: order_by
   id: order_by
-  initialPriceFormatted: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceFormatted: order_by
+  initialFloorPriceRaw: order_by
   isBuyOpen: order_by
   isSellOpen: order_by
   issuanceToken: Token_order_by
@@ -2123,8 +2114,6 @@ input Market_order_by {
   marketSupplyFormatted: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyFormatted: order_by
-  maxSupplyRaw: order_by
   reserveToken: Token_order_by
   reserveToken_id: order_by
   sellFeeBps: order_by
@@ -2176,10 +2165,10 @@ enum Market_select_column {
   id
 
   """column name"""
-  initialPriceFormatted
+  initialFloorPriceFormatted
 
   """column name"""
-  initialPriceRaw
+  initialFloorPriceRaw
 
   """column name"""
   isBuyOpen
@@ -2209,12 +2198,6 @@ enum Market_select_column {
   maxLTV
 
   """column name"""
-  maxSupplyFormatted
-
-  """column name"""
-  maxSupplyRaw
-
-  """column name"""
   reserveToken_id
 
   """column name"""
@@ -2242,13 +2225,12 @@ input Market_stddev_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2263,13 +2245,12 @@ input Market_stddev_pop_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2284,13 +2265,12 @@ input Market_stddev_samp_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2321,8 +2301,8 @@ input Market_stream_cursor_value_input {
   floorSupplyFormatted: String
   floorSupplyRaw: numeric
   id: String
-  initialPriceFormatted: String
-  initialPriceRaw: numeric
+  initialFloorPriceFormatted: String
+  initialFloorPriceRaw: numeric
   isBuyOpen: Boolean
   isSellOpen: Boolean
   issuanceToken_id: String
@@ -2332,8 +2312,6 @@ input Market_stream_cursor_value_input {
   marketSupplyFormatted: String
   marketSupplyRaw: numeric
   maxLTV: numeric
-  maxSupplyFormatted: String
-  maxSupplyRaw: numeric
   reserveToken_id: String
   sellFeeBps: numeric
   status: marketstatus
@@ -2351,13 +2329,12 @@ input Market_sum_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2372,13 +2349,12 @@ input Market_var_pop_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2393,13 +2369,12 @@ input Market_var_samp_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -2414,13 +2389,12 @@ input Market_variance_order_by {
   currentPriceRaw: order_by
   floorPriceRaw: order_by
   floorSupplyRaw: order_by
-  initialPriceRaw: order_by
+  initialFloorPriceRaw: order_by
   lastElevationTimestamp: order_by
   lastTradeTimestamp: order_by
   lastUpdatedAt: order_by
   marketSupplyRaw: order_by
   maxLTV: order_by
-  maxSupplyRaw: order_by
   sellFeeBps: order_by
   totalSupplyRaw: order_by
   tradingFeeBps: order_by
@@ -3536,6 +3510,8 @@ type Token {
   db_write_timestamp: timestamp
   decimals: Int!
   id: String!
+  maxSupplyFormatted: String!
+  maxSupplyRaw: numeric!
   name: String!
   symbol: String!
 }
@@ -3550,6 +3526,8 @@ input Token_bool_exp {
   db_write_timestamp: timestamp_comparison_exp
   decimals: Int_comparison_exp
   id: String_comparison_exp
+  maxSupplyFormatted: String_comparison_exp
+  maxSupplyRaw: numeric_comparison_exp
   name: String_comparison_exp
   symbol: String_comparison_exp
 }
@@ -3559,6 +3537,8 @@ input Token_order_by {
   db_write_timestamp: order_by
   decimals: order_by
   id: order_by
+  maxSupplyFormatted: order_by
+  maxSupplyRaw: order_by
   name: order_by
   symbol: order_by
 }
@@ -3575,6 +3555,12 @@ enum Token_select_column {
 
   """column name"""
   id
+
+  """column name"""
+  maxSupplyFormatted
+
+  """column name"""
+  maxSupplyRaw
 
   """column name"""
   name
@@ -3599,6 +3585,8 @@ input Token_stream_cursor_value_input {
   db_write_timestamp: timestamp
   decimals: Int
   id: String
+  maxSupplyFormatted: String
+  maxSupplyRaw: numeric
   name: String
   symbol: String
 }
