@@ -1,5 +1,6 @@
 export * from './global-stats'
 export * from './markets'
 export * from './platform'
+export * from './trade'
 export * from './trades'
 export * from './users'
